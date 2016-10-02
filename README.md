@@ -1,7 +1,7 @@
 # responsive-styleguide
 A great way to demonstrate responsive breakpointa inside of a styleguide with iframes and angularJs
 
-Sometimes there's a need to demonstrate inside of a styleguide what components (menus, tabs, navs, etc...) look like at different breakpoints. This is a technique that uses iframes embedded within an example styleguide. The demo uses AngularJS, Angular Material and is optimized for apple iphone and ipad devices at their screen dimensions.
+Sometimes there's a need to demonstrate inside of a styleguide what components (menus, tabs, navs, etc...) look like at different breakpoints. This is a technique that uses iframes embedded within an example styleguide. The demo uses AngularJS, Angular Material via CDN and is optimized for apple iphone and ipad devices breakpoints for their screen dimensions. Example buttons can be easily adjusted to display different breakpoints for other Android or Desktop and mobile devices.
 
 * iPhone4 320px X 480px
 * iPhone5 320px X 568px
@@ -12,3 +12,5 @@ Sometimes there's a need to demonstrate inside of a styleguide what components (
 * iPad 768px X 1024px
 
 See demo here: http://craigtockman.com/responsive-styleguide-demo
+
+
