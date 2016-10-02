@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <title>Demo Responsive Styleguide with iFrames and AnguarJS | Craig Tockman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-app="responsiveStyle" ng-cloak>
+    <div class="main">
+        <section layout="row" layout-align="center center">
+            <md-button class="md-raised md-primary" ng-click="demoBoxWidth1={'width':'320px','height':'480px'};demoBoxWidth2={'width':'480px','height':'320px'}">iPhone 4</md-button>
+            <md-button class="md-raised md-primary" ng-click="demoBoxWidth1={'width':'320px','height':'568px'};demoBoxWidth2={'width':'568px','height':'320px'}">iPhone 5</md-button>
+            <md-button class="md-raised md-primary" ng-click="demoBoxWidth1={'width':'375px','height':'667px'};demoBoxWidth2={'width':'667px','height':'375px'}">iPhone 6/7</md-button>
+            <md-button class="md-raised md-primary" ng-click="demoBoxWidth1={'width':'414px','height':'736px'};demoBoxWidth2={'width':'736px','height':'414px'}">iPhone 6/7 Plus</md-button>
+            <md-button class="md-raised md-primary" ng-click="demoBoxWidth1={'width':'768px','height':'1024px'};demoBoxWidth2={'width':'1024px','height':'768px'}">iPad</md-button>
+        </section>
+        <div layout="row" layout-align="space-around center" layout-wrap>
+            <div>
+                <h3>Portrait</h3>
+                <div class="demoBoxWidth" ng-style="demoBoxWidth1" style="width: 320px; height:480px">
+                    <iframe ng-src="{{'http://edition.cnn.com' | trustAsResourceUrl}}"></iframe>
+                </div>
+            </div>
+            <div ng-style="demoWrap">
+                <h3>Landscape</h3>
+                <div class="demoBoxWidth" ng-style="demoBoxWidth2" style="width: 480px; height:320px">
+                    <iframe ng-src="{{'http://edition.cnn.com' | trustAsResourceUrl}}"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <!-- Your application bootstrap  -->
+    <script type="text/javascript">
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('responsiveStyle', ['ngMaterial'])
+        .filter('trustAsResourceUrl', ['$sce', function($sce) {
+            return function(val) {
+                return $sce.trustAsResourceUrl(val);
+            };
+        }])
+    </script>
+</body>
+
+</html>
